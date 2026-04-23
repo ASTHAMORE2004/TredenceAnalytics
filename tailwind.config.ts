@@ -13,15 +13,33 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['IBM Plex Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          foreground: "hsl(var(--surface-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          deep: "hsl(var(--primary-deep))",
+          mid: "hsl(var(--primary-mid))",
+          soft: "hsl(var(--primary-soft))",
+        },
+        node: {
+          start: "hsl(var(--node-start))",
+          task: "hsl(var(--node-task))",
+          approval: "hsl(var(--node-approval))",
+          automated: "hsl(var(--node-automated))",
+          end: "hsl(var(--node-end))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
