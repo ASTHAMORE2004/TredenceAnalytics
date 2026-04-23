@@ -1,16 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ReactFlowProvider } from "reactflow";
+import { NodePalette } from "@/workflow/components/NodePalette";
+import { WorkflowCanvas } from "@/workflow/components/WorkflowCanvas";
+import { ConfigPanel } from "@/workflow/components/ConfigPanel";
+import { SandboxPanel } from "@/workflow/components/SandboxPanel";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <ReactFlowProvider>
+      <div className="flex h-screen w-screen flex-col overflow-hidden bg-background text-foreground">
+        <div className="flex min-h-0 flex-1">
+          <NodePalette />
+          <main className="flex min-w-0 flex-1 flex-col">
+            <header className="sr-only">
+              <h1>HR Workflow Designer</h1>
+            </header>
+            <div className="min-h-0 flex-1">
+              <WorkflowCanvas />
+            </div>
+          </main>
+          <ConfigPanel />
+        </div>
+        <SandboxPanel />
+      </div>
+    </ReactFlowProvider>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
